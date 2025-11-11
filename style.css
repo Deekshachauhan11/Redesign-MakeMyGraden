@@ -1,0 +1,365 @@
+@font-face {
+  font-family: play;
+  src: url(./Assets/PlayfairDisplay-MediumItalic.ttf);
+}
+@font-face {
+  font-family: italic;
+  src: url(./Assets/PlayfairDisplay-Italic.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+}
+main .section1 {
+  background-color: #f1f4e6;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem 9rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+main .section1 nav {
+  position: fixed;
+  width: calc(100% - 6rem);
+  left: 3rem;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+main .section1 nav img {
+  height: 60px;
+  color: #fff;
+}
+main .section1 nav .tag {
+  display: flex;
+  gap: 0.5rem;
+}
+main .section1 nav .tag .nav1 {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+main .section1 nav .tag .nav1 a {
+  text-decoration: none;
+  color: #11452c;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+main .section1 nav .tag .nav1 a:hover {
+  color: black;
+  transform: translateY(-2px);
+}
+main .section1 nav .tag .nav1 #search {
+  background-color: #11452c;
+  padding: 0.5rem;
+  border-radius: 50%;
+  color: #f1f4e6;
+}
+main .section1 nav .tag .nav1 #search:hover {
+  border: 1px solid #11452c;
+  background-color: transparent;
+  color: #11452c;
+}
+main .section1 nav .tag .nav1 a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #11452c;
+  transition: width 0.3s ease;
+}
+main .section1 nav .tag .nav1 a:hover::after {
+  width: 100%;
+}
+main .section1 nav .tag #menu {
+  display: none;
+  color: #11452c;
+}
+main .section1 .Center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: #11452c;
+  margin-top: 13rem;
+}
+main .section1 .Center .text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 50%;
+  margin-right: 3rem;
+}
+main .section1 .Center .text h1 {
+  font-size: 5.5rem;
+  text-align: center;
+  line-height: 0.9;
+  letter-spacing: -1px;
+  margin-left: 5rem;
+  font-weight: 400;
+}
+main .section1 .Center .text span {
+  font-family: italic;
+  font-size: 100;
+  color: rgb(209, 209, 3);
+}
+main .section1 .Center .text p {
+  width: 80%;
+  text-align: center;
+  font-size: 1.2rem;
+}
+main .section1 .Center .text .btn {
+  display: flex;
+  gap: 1rem;
+}
+main .section1 .Center .text .btn button {
+  padding: 0.7rem 1.4rem;
+  border-radius: 1.4rem;
+  border: none;
+  outline: none;
+  background-color: #246134;
+  color: #fff;
+  font-size: 1rem;
+}
+main .section1 .Center .text .btn button:hover {
+  background-color: transparent;
+  color: #246134;
+  border: 1.4px solid #246134;
+}
+main .section1 .Center .text .btn #btn1 {
+  background-color: transparent;
+  color: #246134;
+  border: 1.4px solid #246134;
+}
+main .section1 .Center .text .btn #btn1:hover {
+  background-color: #246134;
+  color: #f1f4e6;
+}
+main .section1 .Center .text .btn #btn1:active {
+  scale: 0.95;
+}
+main .section1 .Center .text .btn button:active {
+  scale: 0.95;
+  box-shadow: 0.5px 0.5px 20px rgb(202, 200, 200);
+}
+main .section1 .Center img {
+  height: 420px;
+}
+main .section1 .Center .img img {
+  position: absolute;
+  top: -2rem;
+  left: 0rem;
+  z-index: 9;
+  height: 300px;
+}
+main .section2 {
+  width: 100%;
+  padding: 5rem 3rem;
+}
+main .section2 h1 {
+  text-align: center;
+  color: #246134;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+}
+main .section2 .allCard {
+  width: 100%;
+  margin-top: 8rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 7rem;
+}
+main .section2 .allCard .top-card {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+main .section2 .allCard .top-card .card {
+  flex-wrap: wrap;
+  padding: 2rem;
+  width: 28%;
+  background-color: #212419;
+  border-radius: 2rem;
+  color: #f1f4e6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .section2 .allCard .top-card .card img {
+  margin-top: -12rem;
+  width: 16rem;
+}
+main .section2 .allCard .top-card .card .content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+main .section2 .allCard .top-card .card .content .price {
+  display: flex;
+  justify-content: space-between;
+}
+main .section2 .allCard .top-card .card .content .price i {
+  border: 1px solid #fff;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+}
+main .section2 .allCard .top-card .card .content .price i:hover {
+  color: #111;
+  background-color: #f1f4e6;
+  transition: all ease 0.2s;
+}
+main .section3 {
+  width: 100%;
+}
+
+@media (max-width: 1150px) {
+  main .section1 nav .nav1 a {
+    font-size: 0.9rem;
+  }
+  main .section1 .Center {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 7rem;
+  }
+  main .section1 .Center .text {
+    margin-right: 0;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .section1 .Center .text h1 {
+    font-size: 3.3rem;
+  }
+  main .section1 .Center .text p {
+    font-size: 1rem;
+  }
+  main .section1 .Center .text .btn button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  main .section2 .allCard .top-card {
+    gap: 4rem;
+  }
+  main .section2 .allCard .top-card .card {
+    flex: 1 1 300px;
+    max-width: 320px;
+  }
+}
+@media (max-width: 786px) {
+  main .section1 nav .tag .nav1 {
+    display: none;
+  }
+  main .section1 nav .tag #menu {
+    display: block;
+  }
+  main .section1 .Center {
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 7rem;
+  }
+  main .section1 .Center .text {
+    margin-right: 0;
+    width: 100%;
+    gap: 1rem;
+  }
+  main .section1 .Center .text h1 {
+    font-size: 3.3rem;
+  }
+  main .section1 .Center .text p {
+    font-size: 0.9rem;
+  }
+  main .section1 .Center .text .btn button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+  main .section1 .Center .img img {
+    position: absolute;
+    top: -2rem;
+    left: 0rem;
+    z-index: 9;
+    height: 180px;
+  }
+  main .section2 .allCard .top-card {
+    gap: 4rem;
+  }
+  main .section2 .allCard .top-card .card {
+    flex: 1 1 300px;
+    max-width: 320px;
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  main .section1 {
+    padding: 1rem;
+  }
+  main .section1 nav .tag .nav1 {
+    display: none;
+  }
+  main .section1 nav .tag #menu {
+    display: block;
+  }
+  main .section1 .Center {
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 7rem;
+  }
+  main .section1 .Center .text {
+    margin-right: 0;
+  }
+  main .section1 .Center .text h1 {
+    font-size: 2.5rem;
+  }
+  main .section1 .Center .text P {
+    font-size: 0.9rem;
+  }
+  main .section1 .Center .text .btn button {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  main .section1 .Center img {
+    height: 180px;
+  }
+  main .section1 .Center .img img {
+    position: absolute;
+    top: -2rem;
+    left: 0rem;
+    z-index: 9;
+    height: 180px;
+  }
+  main .section2 .allCard .top-card {
+    gap: 4rem;
+  }
+  main .section2 .allCard .top-card .card {
+    flex: 1 1 90%;
+    max-width: 90%;
+  }
+}/*# sourceMappingURL=style.css.map */
