@@ -8,20 +8,53 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="./Assets/favicon-32x32.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
+    <div class="loader">
+        <h1>MakeMyGarden</h1>
+    </div>
     <main>
         <div class="section1">
             <nav>
                 <img src="./Assets/logo3.png" alt="logo">
                 <div class="tag">
                     <div class="nav1">
-                        <a href="" target="_blank">Home</a>
-                        <a href="" target="_blank">Services <i class="ri-arrow-down-s-line"></i></a>
-                        <a href="" target="_blank">Shop Plants <i class="ri-arrow-down-s-line"></i></a>
+                        <a href="">Home</a>
+                        <div class="dropdown">
+                            <a href="" target="_blank">Services <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#">New Garden Setup</a>
+                                <a href="#">Garden Maintenance</a>
+                                <a href="#">Garden Makeover</a>
+                                <a href="#">Vacation Care</a>
+                                <a href="#">Veggie Picking</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <a href="" target="_blank">Shop Plants <i class="ri-arrow-down-s-line"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#">Indoor Plants</a>
+                                <a href="#">Outdoor Plants</a>
+                                <a href="#">Succulents & Cacti</a>
+                                <a href="#">Flowering Plants</a>
+                                <a href="#">Medicinal Plants</a>
+                                <a href="#">Air Purifying Plants</a>
+                            </div>
+                        </div>
+                        <div class="dropdown">
                         <a href="" target="_blank">Decor & Planters <i class="ri-arrow-down-s-line"></i></a>
+                         <div class="dropdown-content">
+                                <a href="#">Ceramic Planters</a>
+                                <a href="#">Terracotta Planters</a>
+                                <a href="#">Designer Pots</a>
+                                <a href="#">Hanging Planters</a>
+                                <a href="#">Planter Stands</a>
+                                <a href="#">Garden Decor</a>
+                            </div>
+                        </div>
                         <a href="" target="_blank">Contact</a>
                         <i id="search" class="ri-search-2-line"></i>
                     </div>
@@ -310,7 +343,8 @@
                     <a href="https://www.instagram.com/makemygarden/" target="_blank">
                         <i class="ri-instagram-fill"></i>
                     </a>
-                    <a href="https://www.facebook.com/makemygarden.co.in/" target="_blank"><i class="ri-facebook-circle-fill"></i></a>
+                    <a href="https://www.facebook.com/makemygarden.co.in/" target="_blank"><i
+                            class="ri-facebook-circle-fill"></i></a>
                     <a href="https://makemygarden.com/#" target="_blank">
                         <i class="ri-youtube-fill"></i>
                     </a>
@@ -326,6 +360,7 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 </body>
 

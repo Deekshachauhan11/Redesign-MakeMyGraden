@@ -22,3 +22,18 @@ function menu() {
   });
 }
 menu();
+
+
+let loader = document.querySelector(".loader")
+setTimeout(function(){
+    loader.style.top = "-100%" 
+}, 1000)
+
+
+function locomotiveScroll(){
+  const scroll = new LocomotiveScroll({
+    el: document.querySelector('main'),
+    smooth: true
+});
+}
+locomotiveScroll();

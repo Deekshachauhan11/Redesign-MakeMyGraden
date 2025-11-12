@@ -19,6 +19,36 @@ body {
   height: 100%;
 }
 
+.loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  transition: all ease 0.4s;
+  top: 0;
+  background-color: #246134;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+.loader h1 {
+  color: #f1f4e6;
+  font-size: 4.5rem;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 main {
   width: 100%;
   min-height: 100vh;
@@ -67,13 +97,14 @@ main .section1 nav .tag .nav1 {
   align-items: center;
   gap: 3rem;
 }
-main .section1 nav .tag .nav1 a {
+main .section1 nav .tag .nav1 > a {
   text-decoration: none;
   color: #11452c;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
 }
-main .section1 nav .tag .nav1 a:hover {
+main .section1 nav .tag .nav1 > a:hover {
   color: black;
   transform: translateY(-2px);
 }
@@ -89,18 +120,58 @@ main .section1 nav .tag .nav1 #search:hover {
   background-color: transparent;
   color: #11452c;
 }
-main .section1 nav .tag .nav1 a::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: #11452c;
-  transition: width 0.3s ease;
+main .section1 nav .tag .nav1 .dropdown {
+  position: relative;
+  display: inline-block;
 }
-main .section1 nav .tag .nav1 a:hover::after {
-  width: 100%;
+main .section1 nav .tag .nav1 .dropdown > a {
+  text-decoration: none;
+  color: #11452c;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+main .section1 nav .tag .nav1 .dropdown > a:hover {
+  color: black;
+  transform: translateY(-2px);
+}
+main .section1 nav .tag .nav1 .dropdown > a i {
+  transition: transform 0.3s ease;
+}
+main .section1 nav .tag .nav1 .dropdown:hover > a i {
+  transform: rotate(180deg);
+}
+main .section1 nav .tag .nav1 .dropdown:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+main .section1 nav .tag .nav1 .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(255, 255, 255, 0.98);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  min-width: 220px;
+  border-radius: 12px;
+  z-index: 100;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+main .section1 nav .tag .nav1 .dropdown .dropdown-content a {
+  color: #11452c;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+main .section1 nav .tag .nav1 .dropdown .dropdown-content a:hover {
+  background-color: #f1f4e6;
+  padding-left: 2rem;
+  color: black;
 }
 main .section1 nav .tag #menu {
   display: none;
@@ -190,19 +261,20 @@ main .section1 .Center .img img {
   z-index: 9;
   height: 300px;
 }
-main .section2 {
+
+.section2 {
   width: 100%;
   padding: 5rem 3rem;
   background-color: #fff;
 }
-main .section2 h1 {
+.section2 h1 {
   text-align: center;
   color: #246134;
   font-size: 3rem;
   font-weight: 400;
   letter-spacing: -1px;
 }
-main .section2 .allCard {
+.section2 .allCard {
   width: 100%;
   margin-top: 8rem;
   display: flex;
@@ -210,7 +282,7 @@ main .section2 .allCard {
   flex-wrap: wrap;
   gap: 7rem;
 }
-main .section2 .allCard .top-card {
+.section2 .allCard .top-card {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -219,7 +291,7 @@ main .section2 .allCard .top-card {
   gap: 1rem;
   flex-wrap: wrap;
 }
-main .section2 .allCard .top-card .card {
+.section2 .allCard .top-card .card {
   flex-wrap: wrap;
   padding: 2rem;
   width: 28%;
@@ -232,30 +304,31 @@ main .section2 .allCard .top-card .card {
   align-items: center;
   gap: 0rem;
 }
-main .section2 .allCard .top-card .card img {
+.section2 .allCard .top-card .card img {
   margin-top: -12rem;
   width: 16rem;
 }
-main .section2 .allCard .top-card .card .content {
+.section2 .allCard .top-card .card .content {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
 }
-main .section2 .allCard .top-card .card .content .price {
+.section2 .allCard .top-card .card .content .price {
   display: flex;
   justify-content: space-between;
 }
-main .section2 .allCard .top-card .card .content .price i {
+.section2 .allCard .top-card .card .content .price i {
   border: 1px solid #fff;
   padding: 0.5rem;
   border-radius: 0.3rem;
 }
-main .section2 .allCard .top-card .card .content .price i:hover {
+.section2 .allCard .top-card .card .content .price i:hover {
   color: #111;
   background-color: #f1f4e6;
   transition: all ease 0.2s;
 }
-main .section3 {
+
+.section3 {
   width: 100%;
   padding: 5rem 5rem;
   background-color: #f1f4e6;
@@ -263,7 +336,7 @@ main .section3 {
   flex-direction: column;
   gap: 1rem;
 }
-main .section3 img {
+.section3 img {
   height: 400px;
   width: 100%;
   -o-object-fit: cover;
@@ -271,28 +344,28 @@ main .section3 img {
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
 }
-main .section3 .text {
+.section3 .text {
   padding: 0 3rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main .section3 .text h5 {
+.section3 .text h5 {
   letter-spacing: 2px;
   font-weight: 500;
   font-size: 0.85rem;
   margin: 2rem 0 1rem 0;
 }
-main .section3 .text h1 {
+.section3 .text h1 {
   font-size: 4.2rem;
   font-weight: 400;
   letter-spacing: -1px;
   line-height: 1.15;
 }
-main .section3 .text p {
+.section3 .text p {
   line-height: 1.8;
 }
-main .section3 .text button {
+.section3 .text button {
   width: -moz-fit-content;
   width: fit-content;
   padding: 1rem 1.6rem;
@@ -302,14 +375,15 @@ main .section3 .text button {
   color: #111;
   font-weight: 500;
 }
-main .section3 .text button:hover {
+.section3 .text button:hover {
   border: 2px solid #858177;
   background-color: transparent;
 }
-main .section3 .text button:active {
+.section3 .text button:active {
   scale: 0.95;
 }
-main .section4 {
+
+.section4 {
   width: 100%;
   background-color: #f1f4e6;
   padding: 3rem 8rem;
@@ -320,7 +394,7 @@ main .section4 {
   gap: 3rem;
   text-align: center;
 }
-main .section4 .tags {
+.section4 .tags {
   width: 100%;
   padding: 4rem 5rem;
   background-color: #fff;
@@ -331,45 +405,48 @@ main .section4 .tags {
   gap: 2rem;
   flex-wrap: wrap;
 }
-main .section4 .tags .tag {
+.section4 .tags .tag {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0rem;
 }
-main .section4 .tags .tag h1 {
+.section4 .tags .tag h1 {
   font-size: 3rem;
   font-weight: 500;
 }
-main .section4 .tags .tag i {
+.section4 .tags .tag i {
   font-size: 2rem;
   font-weight: 100;
 }
-main .section4 .service {
+.section4 .service {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
   gap: 2rem;
   padding: 2rem 6rem 0rem 6rem;
   flex-wrap: wrap;
 }
-main .section4 .service .cards {
+.section4 .service .cards {
   transition: all ease 0.3s;
 }
-main .section4 .service .cards i {
+.section4 .service .cards i {
   font-size: 2rem;
   font-weight: 100;
 }
-main .section4 .service .cards p {
+.section4 .service .cards p {
   font-size: 1.2rem;
   font-weight: 500;
 }
-main .section4 .service .cards:hover {
+.section4 .service .cards:hover {
   transform: translateY(-6px);
 }
-main .section5 {
+
+.section5 {
   width: 100%;
   padding: 3rem 8rem;
   display: flex;
@@ -377,11 +454,11 @@ main .section5 {
   background-color: #f1f4e6;
   flex-wrap: wrap;
 }
-main .section5 h1 {
+.section5 h1 {
   font-weight: 500;
   font-size: 1.7rem;
 }
-main .section5 .top {
+.section5 .top {
   flex: 1 1 45%;
   width: 50%;
   display: flex;
@@ -389,10 +466,10 @@ main .section5 .top {
   gap: 1rem;
   margin-bottom: 3rem;
 }
-main .section5 .top .img1,
-main .section5 .top .img2,
-main .section5 .top .img3,
-main .section5 .top .img4 {
+.section5 .top .img1,
+.section5 .top .img2,
+.section5 .top .img3,
+.section5 .top .img4 {
   height: 340px;
   border-radius: 1.1rem;
   color: #fff;
@@ -405,25 +482,26 @@ main .section5 .top .img4 {
   font-weight: 500;
   flex-wrap: wrap;
 }
-main .section5 .top .img1 {
+.section5 .top .img1 {
   background-image: url(./Assets/img1.jpg);
 }
-main .section5 .top .img2 {
+.section5 .top .img2 {
   background-image: url(./Assets/Nighttime\ tranquility\ in\ a\ lush\ garden\ filled\ with\ soft\ lights.jpg);
 }
-main .section5 .top .img3 {
+.section5 .top .img3 {
   background-image: url(./Assets/Starry\ night\ over\ a\ lush\,\ tranquil\ green\ meadow.jpg);
 }
-main .section5 .top .img4 {
+.section5 .top .img4 {
   background-image: url(./Assets/garden.jpg);
 }
-main .section6 {
+
+.section6 {
   width: 100%;
   height: 70%;
   background-color: #fff;
   padding: 5rem 8rem;
 }
-main .section6 h1 {
+.section6 h1 {
   text-align: center;
   color: #246134;
   font-size: 3rem;
@@ -431,11 +509,11 @@ main .section6 h1 {
   letter-spacing: -1px;
   margin-bottom: 4rem;
 }
-main .section6 .swiper {
+.section6 .swiper {
   width: 100%;
   height: 100%;
 }
-main .section6 .swiper .swiper-slide {
+.section6 .swiper .swiper-slide {
   text-align: center;
   font-size: 18px;
   border-radius: 1.1rem;
@@ -445,7 +523,7 @@ main .section6 .swiper .swiper-slide {
   overflow: hidden;
   flex-direction: column;
 }
-main .section6 .swiper .swiper-slide img {
+.section6 .swiper .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
@@ -454,27 +532,28 @@ main .section6 .swiper .swiper-slide img {
   border-radius: 1.1rem;
   transition: transform 0.3s ease;
 }
-main .section6 .swiper .swiper-slide img:hover {
+.section6 .swiper .swiper-slide img:hover {
   transform: scale(1.05);
 }
-main .section6 .swiper .swiper-slide .text {
+.section6 .swiper .swiper-slide .text {
   width: 100%;
   display: flex;
   justify-content: space-between;
   padding: 1rem;
 }
-main .section6 .swiper .swiper-slide .text h1 {
+.section6 .swiper .swiper-slide .text h1 {
   font-size: 1.4rem;
   color: #111;
   font-weight: 600;
 }
-main .section6 .swiper .swiper-slide .text h5 {
+.section6 .swiper .swiper-slide .text h5 {
   color: #111;
   font-weight: 400;
   font-size: 1.1rem;
   text-decoration: underline;
 }
-main footer {
+
+footer {
   width: 100%;
   background-color: #212419;
   color: #f1f4e6;
@@ -484,43 +563,43 @@ main footer {
   gap: 2rem;
   flex-wrap: wrap;
 }
-main footer .big-box {
+footer .big-box {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 2rem;
 }
-main footer .big-box .box1,
-main footer .big-box .box2,
-main footer .big-box .box3,
-main footer .big-box .box4,
-main footer .big-box .box5 {
+footer .big-box .box1,
+footer .big-box .box2,
+footer .big-box .box3,
+footer .big-box .box4,
+footer .big-box .box5 {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-main footer .big-box .box1 h2,
-main footer .big-box .box2 h2,
-main footer .big-box .box3 h2,
-main footer .big-box .box4 h2,
-main footer .big-box .box5 h2 {
+footer .big-box .box1 h2,
+footer .big-box .box2 h2,
+footer .big-box .box3 h2,
+footer .big-box .box4 h2,
+footer .big-box .box5 h2 {
   font-weight: 500;
 }
-main footer .big-box .box1 p,
-main footer .big-box .box2 p,
-main footer .big-box .box3 p,
-main footer .big-box .box4 p,
-main footer .big-box .box5 p {
+footer .big-box .box1 p,
+footer .big-box .box2 p,
+footer .big-box .box3 p,
+footer .big-box .box4 p,
+footer .big-box .box5 p {
   margin-bottom: 0.4rem;
   color: #dbdad8;
   width: -moz-fit-content;
   width: fit-content;
 }
-main footer .big-box .box1 p::after,
-main footer .big-box .box2 p::after,
-main footer .big-box .box3 p::after,
-main footer .big-box .box4 p::after,
-main footer .big-box .box5 p::after {
+footer .big-box .box1 p::after,
+footer .big-box .box2 p::after,
+footer .big-box .box3 p::after,
+footer .big-box .box4 p::after,
+footer .big-box .box5 p::after {
   content: "";
   position: absolute;
   width: 0;
@@ -530,43 +609,43 @@ main footer .big-box .box5 p::after {
   background-color: #f1f4e6;
   transition: width 0.3s ease;
 }
-main footer .big-box .box1 p:hover::after,
-main footer .big-box .box2 p:hover::after,
-main footer .big-box .box3 p:hover::after,
-main footer .big-box .box4 p:hover::after,
-main footer .big-box .box5 p:hover::after {
+footer .big-box .box1 p:hover::after,
+footer .big-box .box2 p:hover::after,
+footer .big-box .box3 p:hover::after,
+footer .big-box .box4 p:hover::after,
+footer .big-box .box5 p:hover::after {
   width: 100%;
 }
-main footer .big-box .box1 p:hover,
-main footer .big-box .box2 p:hover,
-main footer .big-box .box3 p:hover,
-main footer .big-box .box4 p:hover,
-main footer .big-box .box5 p:hover {
+footer .big-box .box1 p:hover,
+footer .big-box .box2 p:hover,
+footer .big-box .box3 p:hover,
+footer .big-box .box4 p:hover,
+footer .big-box .box5 p:hover {
   color: #f1f4e6;
   transform: translateY(-2px);
 }
-main footer .small {
+footer .small {
   padding-top: 2rem;
   border-top: 1px solid #f1f4e6;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-main footer .small p {
+footer .small p {
   font-size: 0.9rem;
 }
-main footer .small .icon {
+footer .small .icon {
   display: flex;
   gap: 1rem;
 }
-main footer .small .icon a {
+footer .small .icon a {
   color: #f1f4e6;
   text-decoration: none;
 }
-main footer .small .icon a i {
+footer .small .icon a i {
   font-size: 1.4rem;
 }
-main footer .small .icon a:hover {
+footer .small .icon a:hover {
   color: #858177;
 }
 
@@ -710,7 +789,7 @@ main footer .small .icon a:hover {
     padding: 1rem;
   }
   main .section1 nav {
-    padding: 12px 25px;
+    padding: 8px 25px;
   }
   main .section1 nav .tag .nav1 {
     top: 70px;
