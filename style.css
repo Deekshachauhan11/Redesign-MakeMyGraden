@@ -37,8 +37,10 @@ main .section1 nav {
   left: 3rem;
   z-index: 99;
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
   padding: 0 2rem;
   border-radius: 2rem;
   background: rgba(255, 255, 255, 0.1);
@@ -58,6 +60,8 @@ main .section1 nav .tag {
 }
 main .section1 nav .tag .nav1 {
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
   gap: 3rem;
 }
@@ -101,15 +105,17 @@ main .section1 nav .tag #menu {
 }
 main .section1 .Center {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0rem;
   color: #11452c;
   margin-top: 13rem;
 }
 main .section1 .Center .text {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 1.5rem;
   width: 50%;
@@ -135,6 +141,9 @@ main .section1 .Center .text p {
 }
 main .section1 .Center .text .btn {
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
 }
 main .section1 .Center .text .btn button {
@@ -199,9 +208,10 @@ main .section2 .allCard {
 main .section2 .allCard .top-card {
   width: 100%;
   display: flex;
-  gap: 1rem;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 main .section2 .allCard .top-card .card {
@@ -213,7 +223,9 @@ main .section2 .allCard .top-card .card {
   color: #f1f4e6;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  gap: 0rem;
 }
 main .section2 .allCard .top-card .card img {
   margin-top: -12rem;
@@ -240,6 +252,164 @@ main .section2 .allCard .top-card .card .content .price i:hover {
 }
 main .section3 {
   width: 100%;
+  padding: 5rem 5rem;
+  background-color: #f1f4e6;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .section3 img {
+  height: 400px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+}
+main .section3 .text {
+  padding: 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .section3 .text h5 {
+  letter-spacing: 2px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin: 2rem 0 1rem 0;
+}
+main .section3 .text h1 {
+  font-size: 4.2rem;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.15;
+}
+main .section3 .text p {
+  line-height: 1.8;
+}
+main .section3 .text button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 1.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: #ece6d3;
+  color: #111;
+  font-weight: 500;
+}
+main .section3 .text button:hover {
+  border: 2px solid #858177;
+  background-color: transparent;
+}
+main .section3 .text button:active {
+  scale: 0.95;
+}
+main .section4 {
+  width: 100%;
+  background-color: #f1f4e6;
+  padding: 3rem 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  text-align: center;
+}
+main .section4 .tags {
+  width: 100%;
+  padding: 4rem 5rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+main .section4 .tags .tag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0rem;
+}
+main .section4 .tags .tag h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+main .section4 .tags .tag i {
+  font-size: 2rem;
+  font-weight: 100;
+}
+main .section4 .service {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 6rem 0rem 6rem;
+  flex-wrap: wrap;
+}
+main .section4 .service .cards {
+  transition: all ease 0.3s;
+}
+main .section4 .service .cards i {
+  font-size: 2rem;
+  font-weight: 100;
+}
+main .section4 .service .cards p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+main .section4 .service .cards:hover {
+  transform: translateY(-6px);
+}
+main .section5 {
+  width: 100%;
+  padding: 3rem 8rem;
+  display: flex;
+  gap: 1rem;
+  background-color: #f1f4e6;
+  flex-wrap: wrap;
+}
+main .section5 h1 {
+  font-weight: 500;
+  font-size: 1.7rem;
+}
+main .section5 .top {
+  flex: 1 1 45%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+main .section5 .top .img1,
+main .section5 .top .img2,
+main .section5 .top .img3,
+main .section5 .top .img4 {
+  height: 340px;
+  border-radius: 1.1rem;
+  color: #fff;
+  padding: 2rem;
+  font-size: 2rem;
+  display: flex;
+  align-items: end;
+  text-shadow: 1px 1px 20px rgb(43, 41, 41);
+  line-height: 1.2;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+main .section5 .top .img1 {
+  background-image: url(./Assets/img1.jpg);
+}
+main .section5 .top .img2 {
+  background-image: url(./Assets/Nighttime\ tranquility\ in\ a\ lush\ garden\ filled\ with\ soft\ lights.jpg);
+}
+main .section5 .top .img3 {
+  background-image: url(./Assets/Starry\ night\ over\ a\ lush\,\ tranquil\ green\ meadow.jpg);
+}
+main .section5 .top .img4 {
+  background-image: url(./Assets/garden.jpg);
 }
 
 @media (max-width: 1150px) {
@@ -272,6 +442,23 @@ main .section3 {
   main .section2 .allCard .top-card .card {
     flex: 1 1 300px;
     max-width: 320px;
+  }
+  main .section4 .service .cardall {
+    margin-bottom: 2rem;
+  }
+  main .section5 {
+    padding: 2rem;
+    flex-wrap: wrap;
+  }
+  main .section5 .top {
+    flex-wrap: wrap;
+  }
+  main .section5 .top .img1,
+  main .section5 .top .img2,
+  main .section5 .top .img3,
+  main .section5 .top .img4 {
+    flex-wrap: wrap;
+    font-size: 1.8rem;
   }
 }
 @media (max-width: 786px) {
@@ -316,6 +503,16 @@ main .section3 {
     max-width: 320px;
     width: 100%;
   }
+  main .section4 .service .cardall {
+    margin-bottom: 2rem;
+  }
+  main .section5 .top .img1,
+  main .section5 .top .img2,
+  main .section5 .top .img3,
+  main .section5 .top .img4 {
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+  }
 }
 @media (max-width: 600px) {
   main .section1 {
@@ -337,6 +534,7 @@ main .section3 {
   }
   main .section1 .Center .text h1 {
     font-size: 2.5rem;
+    margin-left: 0;
   }
   main .section1 .Center .text P {
     font-size: 0.9rem;
@@ -355,11 +553,51 @@ main .section3 {
     z-index: 9;
     height: 180px;
   }
+  main .section2 {
+    padding: 1rem;
+  }
   main .section2 .allCard .top-card {
-    gap: 4rem;
+    gap: 6rem;
   }
   main .section2 .allCard .top-card .card {
+    width: 22%;
     flex: 1 1 90%;
     max-width: 90%;
+    padding: 1.8rem;
+  }
+  main .section2 .allCard .top-card .card img {
+    width: 13rem;
+  }
+  main .section3 {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  main .section3 img {
+    margin-top: 2rem;
+  }
+  main .section3 .text {
+    padding: 1rem;
+  }
+  main .section3 .text h1 {
+    font-size: 2.7rem;
+  }
+  main .section4 {
+    padding: 0 3rem;
+  }
+  main .section4 .tags {
+    padding: 1rem;
+  }
+  main .section4 .service {
+    padding: 2.9rem;
+  }
+  main .section5 {
+    flex-wrap: wrap;
+  }
+  main .section5 .top .img1,
+  main .section5 .top .img2,
+  main .section5 .top .img3,
+  main .section5 .top .img4 {
+    flex-wrap: wrap;
+    font-size: 1.3rem;
   }
 }/*# sourceMappingURL=style.css.map */

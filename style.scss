@@ -18,6 +18,14 @@ body {
   width: 100%;
   height: 100%;
 }
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0rem) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
 main {
   width: 100%;
   min-height: 100vh;
@@ -34,9 +42,7 @@ main {
       width: calc(100% - 6rem);
       left: 3rem;
       z-index: 99;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(row, space-between, center);
       padding: 0 2rem;
       border-radius: 2rem;
 
@@ -55,9 +61,7 @@ main {
         display: flex;
         gap: 0.5rem;
         .nav1 {
-          display: flex;
-          align-items: center;
-          gap: 3rem;
+          @include flex(row, flex-start, center, 3rem);
           a {
             text-decoration: none;
             color: #11452c;
@@ -101,17 +105,11 @@ main {
       }
     }
     .Center {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-direction: row;
+      @include flex(row, space-between, center);
       color: #11452c;
       margin-top: 13rem;
       .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1.5rem;
+        @include flex(column, center, center, 1.5rem);
         width: 50%;
         margin-right: 3rem;
         h1 {
@@ -133,8 +131,7 @@ main {
           font-size: 1.2rem;
         }
         .btn {
-          display: flex;
-          gap: 1rem;
+          @include flex(row, center, center, 1rem);
           button {
             padding: 0.7rem 1.4rem;
             border-radius: 1.4rem;
@@ -201,11 +198,9 @@ main {
       gap: 7rem;
       .top-card {
         width: 100%;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        justify-content: center;
+        @include flex(row, center, center, 1rem);
         flex-wrap: wrap;
+
         .card {
           flex-wrap: wrap;
           padding: 2rem;
@@ -213,9 +208,7 @@ main {
           background-color: #212419;
           border-radius: 2rem;
           color: #f1f4e6;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          @include flex(column, center, center);
 
           img {
             margin-top: -12rem;
@@ -225,7 +218,7 @@ main {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
-           
+
             .price {
               display: flex;
               justify-content: space-between;
@@ -245,19 +238,156 @@ main {
       }
     }
   }
-  .section3{
+  .section3 {
     width: 100%;
+    padding: 5rem 5rem;
+    background-color: #f1f4e6;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    img {
+      height: 400px;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 2rem;
+      border-top-right-radius: 2rem;
+    }
+    .text {
+      padding: 0 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      h5 {
+        letter-spacing: 2px;
+        font-weight: 500;
+        font-size: 0.85rem;
+        margin: 2rem 0 1rem 0;
+      }
+      h1 {
+        font-size: 4.2rem;
+        font-weight: 400;
+        letter-spacing: -1px;
+        line-height: 1.15;
+      }
+      p {
+        line-height: 1.8;
+      }
+      button {
+        width: fit-content;
+        padding: 1rem 1.6rem;
+        border-radius: 0.8rem;
+        border: none;
+        background-color: #ece6d3;
+        color: #111;
+        font-weight: 500;
+      }
+      button:hover {
+        border: 2px solid #858177;
+        background-color: transparent;
+      }
+      button:active {
+        scale: 0.95;
+      }
+    }
+  }
+  .section4 {
+    width: 100%;
+    background-color: #f1f4e6;
+    padding: 3rem 8rem;
+    @include flex(column, center, center, 3rem);
+    text-align: center;
+    .tags {
+      width: 100%;
+      padding: 4rem 5rem;
+      background-color: #fff;
+      @include flex(row, space-between, center, 2rem);
+      flex-wrap: wrap;
+      .tag {
+        @include flex(column, center, center);
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+        i {
+          font-size: 2rem;
+          font-weight: 100;
+        }
+      }
+    }
+    .service {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 2rem 6rem 0rem 6rem;
+      flex-wrap: wrap;
+
+      .cards {
+        transition: all ease 0.3s;
+        i {
+          font-size: 2rem;
+          font-weight: 100;
+        }
+        p {
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+        &:hover {
+          transform: translateY(-6px);
+        }
+      }
+    }
+  }
+  .section5 {
+    width: 100%;
+    padding: 3rem 8rem;
+    display: flex;
+    gap: 1rem;
+    background-color: #f1f4e6;
+    flex-wrap: wrap;
+    h1 {
+      font-weight: 500;
+      font-size: 1.7rem;
+    }
+    .top {
+      flex: 1 1 45%;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      .img1,
+      .img2,
+      .img3,
+      .img4 {
+        height: 340px;
+        border-radius: 1.1rem;
+        color: #fff;
+        padding: 2rem;
+        font-size: 2rem;
+        display: flex;
+        align-items: end;
+        text-shadow: 1px 1px 20px rgb(43, 41, 41);
+        line-height: 1.2;
+        font-weight: 500;
+        flex-wrap: wrap;
+      }
+      .img1 {
+        background-image: url(./Assets/img1.jpg);
+      }
+      .img2 {
+        background-image: url(./Assets/Nighttime\ tranquility\ in\ a\ lush\ garden\ filled\ with\ soft\ lights.jpg);
+      }
+      .img3 {
+        background-image: url(./Assets/Starry\ night\ over\ a\ lush\,\ tranquil\ green\ meadow.jpg);
+      }
+      .img4 {
+        background-image: url(./Assets/garden.jpg);
+      }
+    }
   }
 }
-
-
-
-
-
-
-
-
-
 
 @media (max-width: 1150px) {
   main {
@@ -300,6 +430,28 @@ main {
             flex: 1 1 300px;
             max-width: 320px;
           }
+        }
+      }
+    }
+    .section4 {
+      .service {
+        .cardall {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .section5 {
+      padding: 2rem;
+      flex-wrap: wrap;
+      .top {
+        flex-wrap: wrap;
+
+        .img1,
+        .img2,
+        .img3,
+        .img4 {
+          flex-wrap: wrap;
+          font-size: 1.8rem;
         }
       }
     }
@@ -355,10 +507,28 @@ main {
         .top-card {
           gap: 4rem;
           .card {
-            flex: 1 1 300px; 
+            flex: 1 1 300px;
             max-width: 320px;
             width: 100%;
           }
+        }
+      }
+    }
+    .section4 {
+      .service {
+        .cardall {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+    .section5 {
+      .top {
+        .img1,
+        .img2,
+        .img3,
+        .img4 {
+          flex-wrap: wrap;
+          font-size: 1.6rem;
         }
       }
     }
@@ -386,6 +556,7 @@ main {
           margin-right: 0;
           h1 {
             font-size: 2.5rem;
+            margin-left: 0;
           }
           P {
             font-size: 0.9rem;
@@ -412,13 +583,53 @@ main {
       }
     }
     .section2 {
+      padding: 1rem;
       .allCard {
         .top-card {
-          gap: 4rem;
+          gap: 6rem;
           .card {
+            width: 22%;
             flex: 1 1 90%;
             max-width: 90%;
+            padding: 1.8rem;
+            img {
+              width: 13rem;
+            }
           }
+        }
+      }
+    }
+    .section3 {
+      padding: 1rem;
+      margin-top: 3rem;
+      img {
+        margin-top: 2rem;
+      }
+      .text {
+        padding: 1rem;
+        h1 {
+          font-size: 2.7rem;
+        }
+      }
+    }
+    .section4 {
+      padding: 0 3rem;
+      .tags {
+        padding: 1rem;
+      }
+      .service {
+        padding: 2.9rem;
+      }
+    }
+    .section5 {
+      flex-wrap: wrap;
+      .top {
+        .img1,
+        .img2,
+        .img3,
+        .img4 {
+          flex-wrap: wrap;
+          font-size: 1.3rem;
         }
       }
     }
