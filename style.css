@@ -108,6 +108,12 @@ main .section1 nav .tag .nav1 > a:hover {
   color: black;
   transform: translateY(-2px);
 }
+main .section1 nav .tag .nav1 > a i {
+  transition: transform 0.3s ease;
+}
+main .section1 nav .tag .nav1 > a:hover > a i {
+  transform: rotate(180deg);
+}
 main .section1 nav .tag .nav1 #search {
   background-color: #11452c;
   padding: 0.5rem;
@@ -124,6 +130,9 @@ main .section1 nav .tag .nav1 .dropdown {
   position: relative;
   display: inline-block;
 }
+main .section1 nav .tag .nav1 .dropdown:hover > a i {
+  transform: rotate(180deg);
+}
 main .section1 nav .tag .nav1 .dropdown > a {
   text-decoration: none;
   color: #11452c;
@@ -137,9 +146,6 @@ main .section1 nav .tag .nav1 .dropdown > a:hover {
 }
 main .section1 nav .tag .nav1 .dropdown > a i {
   transition: transform 0.3s ease;
-}
-main .section1 nav .tag .nav1 .dropdown:hover > a i {
-  transform: rotate(180deg);
 }
 main .section1 nav .tag .nav1 .dropdown:hover .dropdown-content {
   display: block;
@@ -156,7 +162,7 @@ main .section1 nav .tag .nav1 .dropdown .dropdown-content {
   min-width: 220px;
   border-radius: 12px;
   z-index: 100;
-  margin-top: 0.5rem;
+  margin-top: 0rem;
   padding: 0.5rem 0;
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
@@ -376,8 +382,9 @@ main .section1 .Center .img img {
   font-weight: 500;
 }
 .section3 .text button:hover {
-  border: 2px solid #858177;
+  border: 2px solid #2c2c2c;
   background-color: transparent;
+  color: #111;
 }
 .section3 .text button:active {
   scale: 0.95;
